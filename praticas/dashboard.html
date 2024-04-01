@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Inicio</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="dashboard.html">Dashboard</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Cadastros
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="cadastro-curso.html">Cadastro de Cursos</a></li>
+                  <li><a class="dropdown-item" href="cadastro-alunos.html">Cadastro de Alunos</a></li>
+                  <li><a class="dropdown-item" href="cadastro-usuario.html">Cadastro de Usuários</a></li>
+                  <li><a class="dropdown-item" href="cadastro-turmas.html">Cadastro de Turmas</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled"></a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+        <div id="grafico1" style="width: 900px; height: 500px; margin: auto;"></div>
+        <div id="grafico2" style="width: 900px; height: 500px;"></div>
+
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+     google.charts.load('current', {'packages':['corechart']});
+     google.charts.setOnLoadCallback(DesenhaGrafico1);
+    
+     function DesenhaGrafico1() {
+
+     //  var data = google.visualization.arrayToDataTable([
+     //   ['Element', 'Density', { role: 'style' }, { role: 'annotation' } ],
+     //   ['Copper', 8.94, '#b87333', 'Cu' ],
+     //   ['Silver', 10.49, 'silver', 'Ag' ],
+     //   ['Gold', 19.30, 'gold', 'Au' ],
+     //   ['Platinum', 21.45, 'color: #e5e4e2', 'Pt' ]
+    
+     var data = google.visualization.arrayToDataTable([
+            ['Element', 'Density'],
+            ['Menor de 18', 20],
+            ['18 a 25', 20],
+            ['25 a 35', 30],
+            ['35+', 40]]);
+
+       var options = {
+         title: 'Idade',
+         //pieHole: 0.0  //permite deixar o gráfico com a parte central vazia
+         
+       };
+
+       var chart = new google.visualization.PieChart(document.getElementById('grafico1'));
+       chart.draw(data, options);
+     }
+     
+   </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>

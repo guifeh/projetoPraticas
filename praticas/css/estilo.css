@@ -1,0 +1,27 @@
+.forms{
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 90px;
+}
+p{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.alunos{
+    margin-top: 50px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.table{
+    max-width: 1100px;
+    margin: auto;
+}
+.card{
+    max-width: 1100px;
+    margin: auto;
+}
+.btn{
+    margin: auto;
+}
